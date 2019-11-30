@@ -54,18 +54,20 @@ for i in range(root, 0, -2):
 
 #Second step is to find Euler totient.
 phi = (p-1) * (q-1)
-print("Euler totient = " + str(phi))
+print("Euler totient = " + str(phi) + "\n")
 
 #Third step is to find the inverse of e modulo n, which is the private key.
 d = extended_euclidean_algorithm(e, phi)
-print("Private key = " + str(d))
+print("Private key = " + str(d) + "\n")
 
 #Fourth step is to check if found private key is the correct one.
 if P1 == square_and_multiply(C1, d, n):
-    print("First example success.")
+    print("1st example answer is: " + str(square_and_multiply(C1, d, n)))
+    print("1st example solved correctly.")
 if P2 == square_and_multiply(C2, d, n):
-    print("Second example success.")
+    print("2nd example answer is: " + str(square_and_multiply(C2, d, n)))
+    print("1st example solved correctly.")
 
 #Last step is to find the plaintext, that we need.
 P = square_and_multiply(C, d, n)
-print(P)
+print("The answer is: " + str(P))
